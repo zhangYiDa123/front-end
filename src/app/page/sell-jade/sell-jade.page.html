@@ -1,0 +1,38 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content padding>
+  <div class="banner">
+    <p class="p1">今日佩玉价格</p>
+    <p class="p2">{{jadePrice}}元/个</p>
+  </div>
+  <div class="menBox">
+    <div class="fl">
+      <p>{{(needUserInfo.jade).toFixed(6)||0.00}}</p>
+      <p>佩玉数量</p>
+    </div>
+    <div class="fl">
+      <p>{{(needUserInfo.jade - needUserInfo.freezeJade).toFixed(6)||0.00}}</p>
+      <p>可用数量</p>
+    </div>
+    <div class="line"></div>
+  </div>
+
+  <div class="ipt">
+    <div class="fl">出让数量</div>
+    <div class="fr yes">
+      <input [(ngModel)]='sellNumber' type="number" (ionBlur)="Input(1)" (ionFocus)="Input(2)"/>
+      <span>最低出让{{min}}个佩玉</span>
+    </div>
+  </div>
+
+  <div class="ipt">
+    <div class="fl">手续费</div>
+    <div class="fr">
+      {{free}}%
+    </div>
+  </div>
+
+  <ion-button expand="full" shape="round" color="baseColor" class="sure" (click) = "submit()">确认出让</ion-button>
+</ion-content>

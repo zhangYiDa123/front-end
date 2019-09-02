@@ -1,0 +1,124 @@
+@import './src/assets/scss/rem.scss';
+ion-header{
+	width:100%;
+	padding:pxToRem(30) 0;
+	position: relative;
+	text-align: center;
+	font-size:pxToRem(26);
+	span{
+		position:absolute;
+		top:pxToRem(26);
+		right:pxToRem(25);
+		vertical-align: middle;
+		i{
+			vertical-align: middle;
+			font-size:pxToRem(30);
+			color:#6C4720;
+			margin-right:pxToRem(10);
+		}
+		em{
+			font-style: normal;
+			vertical-align: middle;
+		}
+	}
+}
+ion-content{
+	.msg{
+		padding:0 0 pxToRem(10) pxToRem(40);
+		margin:pxToRem(20) 0;
+		height:pxToRem(58);
+		position: relative;
+		border-bottom:pxToRem(1) solid #6C4720;
+		>i{
+			position: absolute;
+			left:0;
+			top:pxToRem(3);
+			font-size:pxToRem(40);
+			color:#6C4720;
+		}
+		.msgList{
+			width:100%;
+			height:pxToRem(48);
+			line-height:pxToRem(48);
+		}
+	}
+
+	.tradMartet{
+		margin:pxToRem(25) 0;
+		overflow: hidden;
+		span{
+			font-size:pxToRem(28);
+			color:#6C4720;
+			vertical-align: middle;
+		}
+		em{
+			font-size:pxToRem(24);
+			font-style: normal;
+			vertical-align: middle;
+			letter-spacing: 0;
+		}
+		i{
+			padding-top:pxToRem(6);
+			font-size:pxToRem(22);
+			font-style: normal;
+			color:#FF8300;
+			float:right;
+		}
+	}
+
+	.scollBar{
+		width:100%;
+		height:pxToRem(58);
+		.fl,.fr{
+			width:50%;
+			float:left;
+			padding:0 10%;
+			height:100%;
+			box-sizing: border-box;
+			>div{
+				width:100%;
+				height:100%;
+				line-height:pxToRem(58);
+				text-align: center;
+			}
+			>div.active{
+				border-bottom:2px solid #FF8300;
+				color:#FF8300;
+			}
+		}
+	}
+
+	.scollMain{
+		margin-top:pxToRem(25);
+		.tips{
+			padding:pxToRem(20) 0;
+			text-align: center;
+			color:#999;
+		}
+		table{
+			width: 100%;
+			border-collapse: collapse;
+			border-spacing: 0;
+			text-align: center;
+			thead{
+				tr{
+					border-bottom:1px solid #6C4720;
+					td{
+						padding:pxToRem(15) 0;
+					}
+				}
+			}
+			tbody{
+				td{
+					padding:pxToRem(15) 0;
+					.buyNow{
+						padding:pxToRem(5) pxToRem(10);
+						background:#FF8A00;
+						color:#fff;
+						font-size:pxToRem(24);
+					}
+				}
+			}
+		}
+	}
+}

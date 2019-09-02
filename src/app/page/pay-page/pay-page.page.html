@@ -1,0 +1,15 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content padding>
+  <p class="title">扫一扫请用支付宝支付(元)</p>
+  <p class="p1">￥{{price||0.00}}</p>
+  <div class="imgBox" [innerHTML]="qrCode"></div>
+  <p class="p2">如扫码支付成功，请点击下方‘我已支付’按钮</p>
+  <p class="p2">到我的订单列表页面查看订单详细情况</p>
+</ion-content>
+
+<ion-footer (click) = 'isOk()'>
+  <p>我已支付</p>
+</ion-footer>

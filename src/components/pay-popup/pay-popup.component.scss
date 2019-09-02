@@ -1,0 +1,114 @@
+@import './src/assets/scss/rem.scss';
+@import './src/assets/animate/animate.scss';
+.pay{
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.8);
+	position: fixed;
+	left:0;
+	top:0;
+	.payMain{
+		width:pxToRem(505);
+		height:pxToRem(452);
+		position:absolute;
+		left:50%;
+		top:20%;
+		transform: translateX(-50%);
+		.main{
+			width:100%;
+			height:100%;
+			background:#fff;
+			padding-top:pxToRem(80);
+			@include bounceIn();
+			.title{
+				margin-bottom:pxToRem(95);
+				text-align: center;
+				font-size:pxToRem(32);
+			}
+			.pwBox{
+				width:pxToRem(465);
+				height:pxToRem(78);
+				margin:0 auto;
+				border:1px solid #999;
+				box-sizing: border-box;
+				input{
+					border:none;
+					outline: none;
+					display: block;
+					float:left;
+					width:16.666666666%;
+					height:100%;
+					line-height:pxToRem(88);
+					border-right:1px solid #999;
+					text-align: center;
+					font-size:pxToRem(60);
+					padding:0;
+					box-sizing: border-box;
+					input{
+						padding:0;
+					}
+				}
+			}
+			.sure{
+				width:pxToRem(281);
+				height:pxToRem(57);
+				text-align: center;
+				line-height:pxToRem(57);
+				font-size:pxToRem(28);
+				color:#fff;
+				background:#81511C;
+				margin:pxToRem(57) auto 0 auto;
+			}
+		}
+	}
+
+	.keyBord{
+		width:100%;
+		height:auto;
+		position: absolute;
+		left:0;
+		bottom:0;
+		ul,li{
+			margin:0;
+			padding:0;
+			list-style:none;
+		}
+		ul:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		ul{
+			background:#999;
+			li.exN{
+				line-height:pxToRem(120);
+				font-size:pxToRem(45);
+				color:#fff;
+			}
+			li.icon{
+				i{
+					font-size:pxToRem(55);
+				}
+			}
+			li{
+				width:33.3333%;
+				height:pxToRem(120);
+				text-align: center;
+				float:left;
+				border-right:1px solid #333;
+				border-bottom:1px solid #333;
+				p{
+					margin:0;
+					color:#fff;
+				}
+				p:nth-child(1){
+					padding-top:pxToRem(5);
+					font-size:pxToRem(45);
+				}
+				p:nth-child(2){
+					font-size:pxToRem(28);
+				}
+			}
+		}
+	}
+}

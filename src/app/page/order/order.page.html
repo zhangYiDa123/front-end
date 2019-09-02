@@ -1,0 +1,73 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content padding>
+  <!-- 没有地址情况下 -->
+  <div class="address" (click)="addressPage()" *ngIf="addressList.length == 0">
+    <img src="assets/images/m13.png"/>
+    <span>点击设置收件地址</span>
+    <i class="ionIcon iconfont icon-fanhui-copy-copy"></i>
+  </div>
+  <!-- 有地址情况下 -->
+  <div class="hasAddress" *ngIf="addressList.length>0">
+      <img src="assets/images/m13.png"/>
+      <p>收件人:{{addressInfo.addressee||'-'}}</p>
+      <p>
+        电话 : {{addressInfo.mobile||'-'}}
+        <i class="iconfont icon-fanhui-copy-copy ionIcon" (click)="addressPage()"></i>
+      </p>
+      <p>收货地址: {{addressInfo.address||'-'}}</p>
+  </div>
+  <img src="assets/images/m12.png" class="Img"/>
+  <div class="item">
+    <div class="fl">
+      <img [src]="detail.mainPic||'assets/images/m10.png'"/>
+    </div>
+    <div class="fr">
+      <p>{{detail.name||'-'}}</p>
+      <div class="add">
+        <span (click)="reduce()">-</span>
+        <span>{{num}}</span>
+        <span (click)="add()">+</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="listBox">
+    <div class="list">
+      <span>商品价格</span>
+      <span *ngIf="type==1">￥{{detail.price||'0.00'}}</span>
+      <span *ngIf="type==2">￥{{detail.price||'0.00'}}个玉佩</span>
+    </div>
+
+    <div class="list">
+      <span>运费</span>
+      <span>免运费</span>
+    </div>
+
+    <div class="list" *ngIf="type==1">
+      <span>赠送加持力</span>
+      <span>{{(detail.bonusWisdom * num).toFixed(0)||0}}学识</span>
+    </div>
+
+    <div class="list" *ngIf="type==2">
+      <span>可用玉佩</span>
+      <span>{{canJade}}玉佩</span>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="footMain">
+    <div class="fl">
+      <span>合计金额 </span>
+      <strong *ngIf="type==1">￥{{(detail.price*num).toFixed(2)}}</strong>
+      <strong *ngIf="type==2">{{detail.price*num||'0'}}玉佩</strong>
+    </div>
+    <div class="fr" (click)="pay(type)">
+      <span *ngIf="type==1">支付宝付款</span>
+      <span *ngIf="type==2">玉佩付款</span>
+    </div>
+  </div>
+</ion-footer>

@@ -1,0 +1,13 @@
+<ion-grid>
+	<div id="tree">
+		<div
+		class="item active"
+		*ngFor="let item of treeList;let i = index" 
+		[ngStyle]="{left:item.x+'px',top:item.y+'px','animation-delay':item.s}"
+		(click) = "charge($event,singleJade,item.x)">
+			<div class="myDiv" *ngIf='singleJade&&singleJade>0'></div>
+			<p *ngIf='singleJade&&singleJade>0'>{{singleJade}}</p>
+		</div>
+		<p class="tips" *ngIf='!(singleJade&&singleJade>0)'>亲 暂无可收取的玉佩<span (click)="jump('rules')"> 点击我 </span>查看规则，或者点击<span (click)="jump('speedup')"> 加速 </span>，能获取收取更多玉佩的攻略哦！</p>
+	</div>
+</ion-grid>

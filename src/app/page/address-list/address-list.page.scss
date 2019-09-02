@@ -1,0 +1,50 @@
+@import './src/assets/scss/rem.scss';
+ion-content{
+	.tips{
+		text-align: center;
+		color:#999;
+	}
+	ion-item{
+		ion-avatar{
+			max-width:20%;
+			width:pxToRem(60);
+			height:pxToRem(60);
+			text-align: center;
+			line-height:pxToRem(60);
+			font-size: pxToRem(20);
+			color:#fff;
+			background:#ededed;
+			border-radius: 50%;
+		}
+		.item{
+			max-width:80%;
+			.p1{
+				width:100%;
+				margin:0;
+				padding:pxToRem(20) pxToRem(10) pxToRem(20) pxToRem(40);
+				box-sizing: border-box;
+				span{
+					color:#999;
+				}
+			}
+			.p2{
+				display: block;
+				box-sizing: border-box;
+				width:100%;
+				margin:0;
+				font-size: pxToRem(24);
+				overflow: hidden;
+				text-overflow:ellipsis;
+				white-space: nowrap;
+				padding:0 pxToRem(10) pxToRem(20) pxToRem(40);
+			}
+		}
+	}
+}
+ion-footer{
+	background:green;
+	p{
+		text-align: center;
+		color:#fff;
+	}
+}

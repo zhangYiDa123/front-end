@@ -1,0 +1,56 @@
+@import './src/assets/scss/rem.scss';
+ion-content{
+	.main{
+		width:100%;
+		height:100%;
+		background:#F5F5F5;
+		.title{
+			border-left:1px solid #FE6658;
+			padding-left:pxToRem(20);
+			margin: pxToRem(20) 0;
+		}
+		.item{
+			margin:0 0 pxToRem(30) 0;
+			width:100%;
+			padding:pxToRem(10) 0;
+			background:#fff;
+			.t1{
+				.img{
+					width:pxToRem(109);
+					height:pxToRem(109);
+					border-radius: 50%;
+					text-align: center;
+					line-height:pxToRem(109);
+					i{
+						font-size:pxToRem(54);
+						color:#fff;
+					}
+				}
+			}
+			.t2{
+				padding-top:pxToRem(20);
+				p{
+					padding:pxToRem(3) 0;
+					margin:0;
+					font-weight: 800;
+				}
+				p:nth-child(2){
+					color:#8B8B8B;
+					font-weight: 400;
+				}
+			}
+			.t3{
+				text-align: right;
+				padding-right:pxToRem(24);
+				box-sizing: border-box;
+				line-height:pxToRem(109);
+				span{
+					font-size:pxToRem(16);
+					padding:pxToRem(8) pxToRem(16);
+					background:#FF8801;
+					color:#fff;
+				}
+			}
+		}
+	}
+}

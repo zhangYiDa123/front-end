@@ -1,0 +1,71 @@
+@import './src/assets/scss/rem.scss';
+@import './src/assets/animate/animate.scss';
+.shark{
+	width:100%;
+	height:100%;
+	position:fixed;
+	background:rgba(0,0,0,0.9);
+	z-index:100;
+	left:0;
+	top:0;
+	.sharkMain{
+		width:pxToRem(606);
+		height:pxToRem(768);
+		position: absolute;
+		left:50%;
+		top:50%;
+		transform: translate(-50%,-50%);
+		.mySH{
+			width:100%;
+			height:100%;
+			background: #fff;
+			@include bounceIn();
+		}
+		.title{
+			padding:pxToRem(10);
+			text-align: center;
+			font-size:pxToRem(32);
+		}
+		>p{
+			margin:pxToRem(30) 0;
+			>span{
+				color:#FF0000;
+			}
+		}
+		.tips{
+			width:100%;
+			margin-top:pxToRem(40);
+			background:#FCF3BD;
+			padding:pxToRem(15);
+			>p{
+				color:#FF0000;
+				margin:0;
+				padding-bottom:pxToRem(10);
+				font-size:pxToRem(24);
+			}
+		}
+		.btnBox{
+			margin-top:pxToRem(40);
+			font-size:pxToRem(24);
+			.fl{
+				float:left;
+				width:pxToRem(206);
+				height:pxToRem(50);
+				text-align: center;
+				line-height:pxToRem(50);
+				border:1px solid #6C4720;
+				border-radius: 4px;
+			}
+			.fr{
+				float:right;
+				width:pxToRem(206);
+				height:pxToRem(50);
+				text-align: center;
+				line-height:pxToRem(50);
+				background: #6C4720;
+				color:#fff;
+				border-radius: 4px;
+			}
+		}
+	}
+}

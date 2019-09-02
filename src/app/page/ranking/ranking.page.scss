@@ -1,0 +1,121 @@
+@import './src/assets/scss/rem.scss';
+ion-content{
+	position: relative;
+	.noImg{
+		position:absolute;
+		left:50%;
+		top:40%;
+		width:pxToRem(380);
+		height:auto;
+		transform: translate(-50%,-50%);
+	}
+	ion-grid{
+		padding-bottom:pxToRem(25);
+		.headerM{
+			height:pxToRem(250);
+			ion-col{
+				width:pxToRem(214);
+				height:100%;
+				margin:0 auto;
+				.main{
+					width:100%;
+					height:100%;
+					border:1px solid rgba(67,67,67,0.1);
+					position: relative;
+					padding-top:pxToRem(28);
+					box-sizing: border-box;
+					.m{
+						width:pxToRem(45);
+						height:auto;
+						position:absolute;
+						left:0;
+						top:0;
+					}
+					.myH{
+						margin:0 auto;
+						width:pxToRem(85);
+						height:pxToRem(85);
+						background:url('src/assets/images/head.png') no-repeat center;
+						background-size: 100% auto;
+						img{
+							width:100%;
+							height:100%;
+						}
+					}
+					p{
+						margin:0;
+						padding:0;
+						text-align: center;
+						font-size:pxToRem(22);
+					}
+					p.p1{
+						padding:pxToRem(10) 0 pxToRem(18) 0;
+					}
+					p.p3{
+						padding:pxToRem(4) 0 pxToRem(8) 0;
+					}
+				}
+			}
+			.t2{
+				padding-top:pxToRem(35);
+				box-sizing: border-box;
+			}
+		}
+	}
+	.mid{
+		width:100%;
+		height:pxToRem(15);
+		background:#ededed;
+	}
+	.listMain{
+		width:100%;
+		.itemList{
+			height:pxToRem(70);
+			ion-col{
+				height:100%;
+			}
+			.fl{
+				span.index{
+					display: inline-block;
+					width:pxToRem(36);
+					height:pxToRem(36);
+					line-height:pxToRem(36);
+					border-radius: 50%;
+					// border:1px solid #6A3906;
+					color:#6A3906;
+					font-size:pxToRem(22);
+					text-align: center;
+					margin-right:pxToRem(20);
+					vertical-align: middle;
+				}
+				span.imgBox{
+					display: inline-block;
+					width:pxToRem(62);
+					height:pxToRem(62);
+					background:url('src/assets/images/head.png') no-repeat center;
+					background-size: 100% auto;
+					margin-right:pxToRem(22);
+					img{
+						width:100%;
+						height:100%;
+						margin-right:pxToRem(35);
+						vertical-align: middle;
+					}
+				}
+				
+				em{
+					font-size:pxToRem(24);
+					color:#6A3906;
+					font-style: inherit;
+					vertical-align: middle;
+				}
+			}
+			.fr{
+				font-size:pxToRem(24);
+				line-height:pxToRem(62);
+				text-align: right;
+				padding-right:pxToRem(10);
+			}
+		}
+	}
+}

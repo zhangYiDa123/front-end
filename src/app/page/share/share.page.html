@@ -1,0 +1,24 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+  <span class="history" (click)="invitationHistory()">邀请记录</span>
+</ion-header>
+
+<ion-content>
+  <div class="main">
+    <div class="item">
+      <div class="suchMain">
+          <div class="mainBox" padding>
+            <p>你的专属邀请码</p>
+            <textarea id="code"  ngModel={{inviteCode}} readonly></textarea>
+            <p (click)="copy()">点击复制邀请码</p>
+            <p>每邀请一名好友 +8 学识</p>
+            <div class="qrcode">
+                <ngx-qrcode [qrc-value] = 'createdCode'  qrc-class ="aclass"  qrc-errorCorrectionLevel ="L"></ngx-qrcode >
+            </div>
+            
+            <p>扫码下载国学世界</p>
+          </div>
+      </div> 
+    </div>
+  </div>
+</ion-content>

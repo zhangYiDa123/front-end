@@ -1,0 +1,41 @@
+@import './src/assets/scss/rem.scss';
+@import './src/assets/animate/animate.scss';
+.shark{
+	width:100%;
+	height:100%;
+	position:fixed;
+	background:rgba(0,0,0,0.9);
+	left:0;
+	top:0;
+	z-index:100;
+	.main{
+		width:pxToRem(606);
+		height:pxToRem(382);
+		position: absolute;
+		left:50%;
+		top:50%;
+		transform: translate(-50%,-50%);
+		.mainBox{
+			width:100%;
+			height:100%;
+			background:#fff;
+			@include bounceIn();
+			padding-top:pxToRem(100);
+			box-sizing: border-box;
+			text-align: center;
+			>p{
+				text-align: center;
+				margin-bottom:pxToRem(60);
+			}
+			.set{
+				text-align: center;
+				padding:pxToRem(10) pxToRem(45);
+				font-size:pxToRem(26);
+				box-sizing: border-box;
+				border-radius: 2px;
+				background:#6C4720;
+				color:#fff;
+			}
+		}
+	}
+}

@@ -1,0 +1,82 @@
+@import './src/assets/scss/rem.scss';
+@import './src/assets/animate/animate.scss';
+ion-content{
+	.header{
+		text-align: center;
+		margin:pxToRem(45) 0 pxToRem(45) 0;
+		min-height:pxToRem(280);
+		@include bounceIn();
+		.iconfont{
+			font-size:pxToRem(220);
+		}
+		img{
+			width:pxToRem(200);
+			height:auto;
+			display: block;
+			margin:0 auto;
+		}
+	}
+
+	.msgBox{
+		width:100%;
+		height: pxToRem(255);
+		background:#B5B5B5;
+		position: relative;
+		padding-left:30%;
+		box-sizing: border-box;
+		.icon{
+			@include bounceIn();
+		}
+		.iconfont{
+			position:absolute;
+			left:2%;
+			top:50%;
+			transform: translateY(-50%);
+			font-size:pxToRem(105);
+		}
+		.msgBoxList{
+			padding:pxToRem(20) 0;
+			p{
+				font-size:pxToRem(26);
+			}
+		}
+	}
+
+	.loadingR{
+		position: relative;
+		min-height:pxToRem(300);
+		.loading{
+			position: absolute;
+			left:50%;
+			top:50%;
+			transform: translate(-50%,-50%);
+			font-size:50px;
+		}
+	}
+
+	.tips{
+		margin:pxToRem(20) 0;
+		color:#FE0000;
+		font-size:pxToRem(26);
+	}
+	
+	.qrcode{
+		width:pxToRem(220);
+		height:pxToRem(220);
+		margin:0 auto;
+		img{
+			display: block;
+			width:100%;
+			height:100%;
+		}
+	}
+
+	
+
+	.tips2{
+		text-align: center;
+		color:#006CFF;
+		text-decoration: underline;
+		font-size:pxToRem(28);
+	}
+}

@@ -1,0 +1,55 @@
+@import './src/assets/scss/rem.scss';
+ion-content{
+	.banner{
+		width:100%;
+		height:pxToRem(235);
+		background:rgba(79, 55, 47, 0.6);
+		box-shadow:0px 2px 4px 0px rgba(0, 0, 0, 0.55);
+		border-radius:4px;
+		.fl{
+			width:50%;
+			height:100%;
+			float:left;
+			p{
+				text-align: center;
+				margin: 0;
+			}
+			p:nth-child(1){
+				font-size:pxToRem(80);
+				color:#fff;
+				margin:pxToRem(35) 0 pxToRem(25) 0;
+			}
+			p:nth-child(2){
+				font-size:pxToRem(32);
+				color:#fff;
+			}
+		}
+	}
+	.tableInfo{
+		margin-top:pxToRem(45);
+		table{
+			width: 100%;
+			border-collapse: collapse;
+			border-spacing: 0;
+			text-align: center;
+			thead{
+				tr{
+					td{
+						padding:pxToRem(15) 0;
+					}
+				}
+			}
+			tbody{
+				td{
+					padding:pxToRem(15) 0;
+					font-size:12px;
+				}
+			}
+		}
+		.tips{
+			width:100%;
+			text-align: center;
+			color:#999;
+		}
+	}
+}

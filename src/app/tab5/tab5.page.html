@@ -1,0 +1,57 @@
+<ion-content>
+  <header padding>
+    <div class="fl">
+      <img src="assets/images/head.png"/>
+    </div>
+    <div class="fr">
+      <p class="name">{{userInfo.nickname}}</p>
+      <p>ID {{userInfo.id}}</p>
+    </div>
+    <div class="frr">
+      <i class="iconfont icon-fanhui-copy-copy iocn1" (click)="personalInfo()"></i>
+    </div>
+
+    <div class="footer">
+      <div class="fl item" (click)="toJadePage()">
+        <p><img src="assets/images/eg2.png"/><span>我的佩玉</span></p>
+        <p>{{userInfo.jade}}</p>
+      </div>
+      <div class="fr item" (click)="mylearn()">
+        <p><img src="assets/images/eg3.png"/><span>我的学识</span></p>
+        <p>{{userInfo.wisdom}}</p>
+      </div>
+    </div>
+  </header>
+
+  <div class="code">
+    <div class="fl item">
+      <p>我的邀请码</p>
+      <p>{{userInfo.inviteCode}}</p>
+    </div>
+    <div class="fr item">
+      <p>邀请好友</p>
+      <p>+8 学识</p>
+      <i class="iconfont icon-fanhui-copy-copy iocn1" (click)="invitation()"></i>
+    </div>
+  </div>
+
+  <div class="listBox">
+    <div class="list" (click)="sellJadePage()">
+      <i class="icon-iconfontzhizuobiaozhunbduan27 iconfont iocn2"></i> 出售佩玉 <i class="iconfont icon-fanhui-copy-copy iocn1"></i>
+    </div>
+    <div class="list" (click)="toShopOrderPage()">
+      <i class="icon-store_icon iconfont iocn2"></i> 商城订单 <i class="iconfont icon-fanhui-copy-copy iocn1"></i>
+    </div>
+    <div class="list" (click)="toPlayPage()">
+      <i class="icon-connect iconfont iocn2"></i> 玩转国学 <i class="iconfont icon-fanhui-copy-copy iocn1"></i>
+    </div>
+    <div class="list" (click)="toCustomerPage()">
+      <i class="icon-kefu1 iconfont iocn2"></i> 联系客服 <i class="iconfont icon-fanhui-copy-copy iocn1"></i>
+    </div>
+    <div class="list" (click)="toSetPage()">
+      <i class="icon-shezhi iconfont iocn2"></i> 个人设置 <i class="iconfont icon-fanhui-copy-copy iocn1"></i>
+    </div>
+
+  </div>
+  
+</ion-content>

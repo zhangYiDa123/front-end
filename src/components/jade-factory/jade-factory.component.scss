@@ -1,0 +1,63 @@
+@import './src/assets/scss/rem.scss';
+@import './src/assets/animate/animate.scss';
+@keyframes dong {
+	0% {             
+			transform: translate(0px, 0px);            
+	 }            
+	 50% {                
+			transform: translate(0px, -10px);            
+	 }            
+	 100% {                
+			transform: translate(0px, 0px);
+	 }
+}
+ion-grid{
+	height:pxToRem(750);
+	#tree{
+		width:100%;
+		height:100%;
+		position: relative;
+		transition: all 0.8s;
+		.tips{
+			width:80%;
+			text-align: center;
+			position: absolute;
+			left:50%;
+			top:50%;
+			transform: translate(-50%,-50%);
+			span{
+				color:green;
+				text-decoration: underline;
+			}
+		}
+		.changeSmall{
+			transform: scale(0.4);
+		}
+		.item.active{
+			animation: dong 4s infinite;
+		}
+		.item{
+			position:absolute;
+			width:55px;
+			height:60px;
+			margin:0px;
+			padding:0px;
+			transition: all 0.8s;
+			.myDiv{
+				width:45px;
+				height:45px;
+				margin:0 auto;
+				background:url('src/assets/images/eg4.png') no-repeat center;
+				background-size: 95% auto;
+			}
+			p{
+				height:15px;
+				font-size:12px;
+				padding:0;
+				line-height:15px;
+				text-align: center;
+				margin:0;
+			}
+		}
+	}
+}

@@ -1,0 +1,80 @@
+<ion-header>
+    君子玉交易 
+    <span (click)="orderPage()">
+      <i class="icon-icon- iconfont"></i> <em>我的订单</em>
+    </span>
+</ion-header>
+
+<ion-content padding>
+  <app-charts></app-charts>
+  <div class="msg">
+    <i class="icon-lingdang iconfont"></i>
+    <div class="msgList">
+      <marquee style="color:#FF8A00" direction="left" height="100%" width="100%" >{{text}}</marquee>
+    </div>
+  </div>
+  <div class="tradMartet">
+    <span>交易市场</span>
+    <em>(每日交易时间段:10:00~22:00)</em>
+    <i (click)='rules()'>交易规则>></i>
+  </div>
+  <div class="scollBar">
+    <div class="fl" (click)="change(1)">
+      <div [ngClass]="{active:state}">出让君子玉</div>
+    </div>
+    <div class="fr" (click)="change(2)">
+        <div [ngClass]="{active:!state}">已成交记录</div>
+    </div>
+  </div>
+
+  <div class="scollMain">
+    <div class="switch1" *ngIf="state">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            <td>时间</td>
+            <td>数量</td>
+            <td>总计</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of sellOrderList;let i = index">
+            <td>{{i+1}}</td>
+            <td>{{item.createTime}}</td>
+            <td>{{item.actualNum}}</td>
+            <td>￥{{item.totalPrice}}</td>
+            <td><span class="buyNow" (click)="bugNow(item.orderno,item.actualNum,item.jadePrice,item.actualPrice)">立即购买</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="tips" *ngIf="sellOrderList.length == 0">暂无订单</div>
+    </div>
+
+    <div class="switch1" *ngIf="!state">
+        <table>
+          <thead>
+            <tr>
+              <td>序</td>
+              <td>时间</td>
+              <td>数量</td>
+              <td>总计</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of orderHistoryList; let i = index">
+              <td>{{i+1}}</td>
+              <td>{{item.createTime}}</td>
+              <td>{{item.num}}</td>
+              <td>￥{{item.totalPrice}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="tips" *ngIf="orderHistoryList.length == 0">暂无历史订单</div>
+      </div>
+  </div>
+</ion-content>
+
+<app-buy-card (fromChild)="receiveVal($event)" *ngIf="show" [orderInfo]="orderInfo"></app-buy-card>
+<app-set-card *ngIf="setState" (fromChild)="setEvent($event)" [parentVal]="parentVal"></app-set-card>

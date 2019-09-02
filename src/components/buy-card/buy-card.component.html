@@ -1,0 +1,21 @@
+<div class="shark">
+	<div class="sharkMain">
+			<div class="mySH" padding>
+				<div class="title">购入</div>
+				<p>打款账户：***提交订单后可查看</p>
+				<p>联系电话：***提交订单后可查看</p>
+				<p>购入数量：<span>{{orderInfo.actualNum||0}}</span></p>
+				<p>购入单价：<span>￥{{orderInfo.jadePrice||0}}</span></p>
+				<p>应付金额：<span>￥{{orderInfo.actualPrice||0}}</span></p>
+				<div class="tips">
+					<p>提示：</p>
+					<p>点击下方“提交订单”后需在15分钟内完成对卖家 的付款。确认购入，请点击“提交订单”</p>
+				</div>
+	
+				<div class="btnBox">
+					<span class="fl" (click)='sumbit(1)'>放弃</span>
+					<span class="fr" (click)='sumbit(2)'>提交订单</span>
+				</div>
+			</div>
+	</div>
+</div>

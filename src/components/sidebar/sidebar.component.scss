@@ -1,0 +1,26 @@
+@import './src/assets/scss/rem.scss';
+.sideBar{
+	padding-top:pxToRem(100);
+	ul,li{
+		margin:0;
+		padding:0;
+		list-style: none;
+		p{
+			margin:0;
+		}
+	}
+	ul{
+		li{
+			text-align: center;
+			margin-bottom:pxToRem(25);
+			p{
+				font-size:pxToRem(20);
+				padding-bottom:pxToRem(6);
+				color:#560202;
+				i{
+					font-size:pxToRem(50);
+				}
+			}
+		}
+	}
+}

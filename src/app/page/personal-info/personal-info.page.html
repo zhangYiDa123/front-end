@@ -1,0 +1,31 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content padding>
+  <div class="item">
+    <span class="fl">昵称</span>
+    <div [ngClass]="{fr:true,number:nickname}" (click)="setNickName(1,'昵称')">{{nickname || '请设置'}}</div>
+  </div>
+
+  <div class="item">
+    <span class="fl">手机号码</span>
+    <div class="fr number">{{phoneNumber||'暂未设置'}}</div>
+  </div>
+
+  <div class="item">
+    <span class="fl">真实姓名</span>
+    <div [ngClass]="{fr:true,number:realname}" (click)="realName()">{{realname||'请认证'}}</div>
+  </div>
+
+  <div class="item">
+    <span class="fl">身份证号</span>
+    <div [ngClass]="{fr:true,number:idCard}" (click)="realName()">{{idCard||'请认证'}}</div>
+  </div>
+
+  <div class="item">
+    <span class="fl">支付宝号</span>
+    <div [ngClass]="{fr:true,number:alipayAccount}" (click)="realName()">{{alipayAccount||'请认证'}}</div>
+  </div>
+
+</ion-content>

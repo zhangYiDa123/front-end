@@ -1,0 +1,6 @@
+@import './src/assets/scss/rem.scss';
+ion-content{
+	ion-button{
+		margin-top:pxToRem(114);
+	}
+}

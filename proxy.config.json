@@ -1,0 +1,11 @@
+{
+	"/api":{
+		"target":"http://www.sscoin.me/api",
+		"secure":false,
+		"logLevel":"debug",
+		"changeOrigin": true,
+		"pathRewrite":{
+			"^/api":""
+		}
+	}
+}

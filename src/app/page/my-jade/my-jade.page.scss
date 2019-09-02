@@ -1,0 +1,81 @@
+@import './src/assets/scss/rem.scss';
+.myTitleBox{
+	width:100%;
+	height:420px;
+	.part1{
+		width:100%;
+		height:pxToRem(243);
+		background:#32B16C;
+		box-sizing: border-box;
+		margin-bottom:pxToRem(25);
+		.top{
+			width:100%;
+			height:pxToRem(56);
+			margin-bottom:pxToRem(36);
+			line-height:pxToRem(56);
+			color:#fff;
+			.fl{
+				width:50%;
+				float:left;
+				span{
+					padding:pxToRem(5) pxToRem(15);
+					border-radius: pxToRem(5);
+					background:#fff;
+					color:#32B16C;
+					font-size:pxToRem(24);
+				}
+			}
+		}
+
+		.footer{
+			font-size: pxToRem(56);
+			color:#fff;
+		}
+	}
+
+	.title{
+		width:100%;
+		height:pxToRem(48);
+		line-height:pxToRem(48);
+		border-left:4px solid #32B16C;
+		box-sizing: border-box;
+		padding-left:pxToRem(20);
+		margin-bottom:pxToRem(15);
+		font-weight: 700;
+	}
+
+	.msg{
+		width:100%;
+		margin:0 0 pxToRem(37) 0;
+		font-size:pxToRem(24);
+		color:#625555;
+	}
+
+	.line{
+		width:100%;
+		height:pxToRem(20);
+		background:#D8D8D8;
+		margin-bottom:pxToRem(31);
+	}
+
+}
+.mainBox{
+	width:100%;
+	height:calc(100% - 420px);
+	position: relative;
+	.item{
+		margin-bottom:pxToRem(31);
+		p:nth-child(1){
+			font-size:pxToRem(24);
+			margin:0 0 0 0;
+			span{
+				float:right;
+			}
+		}
+		p:nth-child(2){
+			margin:pxToRem(10) 0 0 0;
+			font-size:pxToRem(24);
+			color:#D2D2D2;
+		}
+	}
+}

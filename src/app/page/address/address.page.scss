@@ -1,0 +1,19 @@
+@import './src/assets/scss/rem.scss';
+.iptBox{
+	width:100%;
+	box-sizing: border-box;
+	padding:0 pxToRem(30);
+	.iptItem{
+		width:100%;
+		border-bottom:1px solid #999;
+		box-sizing: border-box;
+		margin-bottom:pxToRem(25);
+	}
+	.sure{
+		margin-top:pxToRem(240);
+		width:100%;
+		height:pxToRem(88);
+		color:#fff;
+		font-size:18px;
+	}
+}

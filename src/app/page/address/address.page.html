@@ -1,0 +1,12 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content padding>
+  <div class="iptBox">
+    <ion-input (ionBlur)="Input(1)" (ionFocus)="Input(2)" placeholder="收件人:" [(ngModel)]="params.addressee" class="iptItem"></ion-input>
+    <ion-input (ionBlur)="Input(1)" (ionFocus)="Input(2)" type="tel" placeholder="电话:" [(ngModel)]="params.mobile" class="iptItem"></ion-input>
+    <ion-input (ionBlur)="Input(1)" (ionFocus)="Input(2)" placeholder="收件地址:" [(ngModel)]="params.address" class="iptItem"></ion-input>
+    <ion-button expand="full" shape="round" color="baseColor" class="sure" (click)="saveAddress()">确定</ion-button>
+  </div>
+</ion-content>

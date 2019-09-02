@@ -1,0 +1,44 @@
+// http://ionicframework.com/docs/theming/
+@import '~@ionic/angular/css/core.css';
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+@import 'assets/font/iconfont.css';
+html,body{
+	font-size:14px;
+}
+.header-md:after{
+	display: none !important;
+	opacity: 0 !important;
+}
+.refresher-refreshing-text{
+ font-size:12px !important;
+}
+.action-sheet-button.sc-ion-action-sheet-ios{
+	font-size:14px !important;
+}
+.action-sheet-button.sc-ion-action-sheet-ios .action-sheet-icon.sc-ion-action-sheet-ios{
+	font-size:22px !important;
+}
+.action-sheet-icon.sc-ion-action-sheet-md{
+	font-size:22px !important;
+}
+.action-sheet-button.sc-ion-action-sheet-md{
+	font-size:14px !important;
+}
+
+.rePw .native-input.sc-ion-input-ios:invalid, .rePw .native-input.sc-ion-input-ios,.rePw .native-input.sc-ion-input-md:invalid,.rePw .native-input.sc-ion-input-md {
+	padding:0;
+ }
+ .clearfix:after{
+	display: block;
+	content:'';
+	clear: both;
+	height:0;
+}

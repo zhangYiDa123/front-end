@@ -1,0 +1,38 @@
+@import './src/assets/scss/rem.scss';
+ion-content{
+	.part1{
+		width:100%;
+		height:pxToRem(253);
+		background:url('../../../assets/images/m26.png') no-repeat center;
+		background-size: 100% 100%;
+	}
+	.part2{
+		width:100%;
+		.partO{
+			background:RGBA(250, 169, 65, 1);
+		}
+		.partl{
+			background:RGBA(244, 78, 62, 1);
+		}
+		.part2-1{
+			height:pxToRem(206);
+			margin-bottom:pxToRem(34);
+			padding:pxToRem(15) pxToRem(30);
+			box-sizing: border-box;
+			p{
+				margin:0;
+				padding-bottom:pxToRem(15);
+				color:#fff;
+				font-size:pxToRem(26);
+			}
+		}
+		.partM{
+			box-sizing: border-box;
+			font-size:pxToRem(26);
+			p{
+				text-align: right;
+				font-size:pxToRem(34);
+			}
+		}
+	}
+}

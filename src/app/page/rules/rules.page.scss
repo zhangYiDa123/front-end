@@ -1,0 +1,23 @@
+@import './src/assets/scss/rem.scss';
+ion-content{
+	width:100%;
+	height:100%;
+	.main{
+		width:100%;
+		height:100%;
+		background:url('src/assets/images/bg1.jpg') no-repeat 0px 0px;
+		background-size:100% auto;
+		padding-top:pxToRem(500);
+		box-sizing: border-box;
+		overflow-y: auto;
+		.item{
+			margin-bottom:pxToRem(40);
+			padding:0 pxToRem(30);
+			box-sizing: border-box;
+			color:#efc688;
+			span{
+				font-size:pxToRem(32);
+			}
+		}
+	}
+}

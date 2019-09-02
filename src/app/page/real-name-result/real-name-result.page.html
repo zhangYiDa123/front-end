@@ -1,0 +1,48 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content padding>
+
+  <div class="header">
+    <!-- 待审核 -->
+    <i class="icon-shenhezhong2 iconfont icon" *ngIf="authFlagStr==='待审核'"></i>
+    <img src="assets/images/s_error.png" *ngIf="authFlagStr==='审核失败'"/>
+    <img src="assets/images/s_success.png" *ngIf="authFlagStr==='审核成功'"/>
+  </div>
+
+  <div class="msgBox">
+    <div class="msgBoxList">
+      <p>真实姓名：<span>{{name}}</span></p>
+      <p>身份证号：<span>{{idCard}}</span></p>
+      <p>支付宝号：<span>{{alipayAccount}}</span></p>
+    </div>
+    <i class="icon-credentials_icon iconfont"></i>
+  </div>
+
+  <div class="result" class="loadingR">
+    <ion-spinner class="loading sc-ion-loading-ios ios spinner-circles hydrated" *ngIf="loadingState"></ion-spinner>
+    <!-- 待审核 且是没有被驳回重新提交的状态 -->
+    <div *ngIf="authFlagStr==='待审核'&&!isPay">
+      <p class="tips">1 为避免恶意注册，请使用支付宝扫码支付1元至官方账户，完成实名认证,若未支付则认证失败</p>
+      <p class="tips">2 完成扫码支付后我们会在1-2个工作日完成审核工作,审核结果您可以在'加速'>实名入口查看审核结果</p>
+      <div class="qrcode" [innerHTML]='htmlImg'>
+        <!-- <img src="assets/images/m25.png" class="Img"/> -->
+      </div>
+      <p class="tips2">立即扫码支付</p>
+    </div>
+    <!-- 审核失败 主要是资料不正确 人工驳回 -->
+    <div *ngIf="authFlagStr==='审核失败'">
+        <br/><br/><br/><br/><br/>
+        <p class="tips" style="text-align: center;">失败原因：资料填写有明显错误</p>
+        <ion-button expand="full" shape="round" color="baseColor" class="pay" (click) = "again()">重新审核</ion-button>
+    </div>
+    <!-- 审核成功 -->
+    <div *ngIf="authFlagStr==='审核成功'">
+        <br/><br/><br/><br/><br/>
+        <ion-button expand="full" shape="round" color="baseColor" class="pay" (click) = "toTrade()">前往交易</ion-button>
+    </div>
+  </div>
+  
+  
+</ion-content>

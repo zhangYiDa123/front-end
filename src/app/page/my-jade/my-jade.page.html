@@ -1,0 +1,48 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content>
+    <div padding class="myTitleBox">
+        <div class="part1" padding>
+          <div class="top">
+            <div class="fl">我的佩玉总数</div>
+            <div class="fl" style="text-align: right;"><span (click)="sellNow()">立即出售</span></div>
+          </div>
+          <div class="footer">{{jade}}</div>
+        </div>
+      
+        <div class="title">佩玉简介</div>
+        <p class="msg">
+            国学世界是将区块链与“公益教育，推广中国文化”相结合的公益
+            生态圈，借助区块链去中心化、分布式数据库等技术特点，使公
+            益教育、推广中国文化的全过程更加安全、透明，使“用商业理念
+            做教育”成为可能，以国学推动社会思想教育进步，最终为成为中
+            国梦做出杰出贡献，实现民族富强。
+            佩玉作为个人学习教育产生的奖励，总量有限，且随时间的推移
+            难度越来越大，前期参与者更有优势。
+        </p>
+        <div class="line"></div>
+      
+        <div class="title">收支记录</div>
+    </div>
+  
+    <ion-content class="mainBox" padding>
+      <ion-list>
+        <div class="item" *ngFor="let item of getJadeList">
+          <p>{{item.typeStr}}
+            <span [ngStyle]="{color:item.jadeChange*1>0?'#55CAD9':'#FE7558'}">{{item.jadeChange}}</span>
+          </p>
+          <p>{{item.createTime}}</p>
+        </div>
+      </ion-list> 
+      <ion-infinite-scroll threshold="60px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="正在加载更多">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+  </ion-content>
+</ion-content>
+  
+

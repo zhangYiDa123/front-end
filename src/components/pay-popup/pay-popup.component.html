@@ -1,0 +1,66 @@
+<div class="pay">
+  <div class="payMain">
+    <div class="main">
+      <div class="title">请输入支付密码</div>
+      <div class="pwBox">   
+      
+      <input type="password" readonly [(ngModel)]=a/>
+      <input type="password" readonly [(ngModel)]=b/>
+      <input type="password" readonly [(ngModel)]=c/>
+      <input type="password" readonly [(ngModel)]=d/>
+      <input type="password" readonly [(ngModel)]=e />
+      <input type="password" readonly [(ngModel)]=f style="border-right:none"/>
+      
+      </div>
+      <!-- <div class="sure" (click)="sure()">确定</div> -->
+    </div>
+  </div>
+
+  <div class="keyBord">
+    <ul>
+      <li (click)="inputNum(1)">
+        <p>1</p>
+        <p></p>
+      </li>
+      <li (click)="inputNum(2)">
+        <p>2</p>
+        <p>ABC</p>
+      </li>
+      <li style="border-right:none" (click)="inputNum(3)">
+        <p>3</p>
+        <p>DEF</p>
+      </li>
+      <li (click)="inputNum(4)">
+        <p>4</p>
+        <p>GHI</p>
+      </li>
+      <li (click)="inputNum(5)">
+        <p>5</p>
+        <p>LJK</p>
+      </li>
+      <li style="border-right:none" (click)="inputNum(6)">
+        <p>6</p>
+        <p>MNO</p>
+      </li>
+      <li (click)="inputNum(7)">
+        <p>7</p>
+        <p>PQRS</p>
+      </li>
+      <li (click)="inputNum(8)">
+        <p>8</p>
+        <p>TUV</p>
+      </li>
+      <li style="border-right:none" (click)="inputNum(9)">
+        <p>9</p>
+        <p>WXYZ</p>
+      </li>
+      <li class="exN" style="border-bottom:none" (click)="inputNum('.')">.</li>
+      <li class="exN" style="border-bottom:none" (click)="inputNum(0)">
+        0
+      </li>
+      <li class="exN icon" style="border-bottom:none;border-right:none" (click)="inputNum('delete')">
+        <i class="icon-shanchujian iconfont"></i>
+      </li>
+    </ul>
+  </div>
+</div>

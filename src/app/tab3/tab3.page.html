@@ -1,0 +1,24 @@
+<ion-content>
+  <div class="main">
+    <div class="title">
+      <img src="assets/images/m16.png" />
+    </div>
+
+    <div class="titleMsg">
+        书生1236 完成礼拜 <span>+1</span> 学识
+    </div>
+
+    <div class="item" padding *ngFor="let item of userData">
+      <div class="fl p1">
+        <img [src]="item.img1"/>
+      </div>
+      <div class="fl p2">
+        <img [src]="item.img2" />
+      </div>
+      <div class="fl p3">
+        <img [src]="item.img3" class="img1"/>
+        <img src="assets/images/m21.png" class="img2" (click)="lighting(item.name)"/>
+      </div>
+    </div>
+  </div>
+</ion-content>

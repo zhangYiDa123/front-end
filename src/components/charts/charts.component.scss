@@ -1,0 +1,24 @@
+@import './src/assets/scss/rem.scss';
+.title{
+	width:100%;
+	>img{
+		width: pxToRem(40);
+		vertical-align: middle;
+		margin-right:10px;
+	}
+	span{
+		vertical-align: middle;
+	}
+	.sp1{
+		font-size:pxToRem(30);
+		margin-right:4px;
+	}
+	.sp2{
+		color:#FF8A00;
+		font-size:pxToRem(26);
+	}
+}
+.charts{
+	width:100%;
+	height:pxToRem(270);
+}

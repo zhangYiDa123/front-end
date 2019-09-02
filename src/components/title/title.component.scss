@@ -1,0 +1,15 @@
+@import './src/assets/scss/rem.scss';
+ion-header{
+	ion-toolbar{
+		--border-width: 0 0 0px;
+	}
+	i{
+		font-size:16px;
+		float:left;
+		vertical-align: middle;
+		margin-left:10px;
+	}
+	ion-title{
+		font-size:pxToRem(26);
+	}
+}

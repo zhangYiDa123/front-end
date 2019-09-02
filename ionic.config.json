@@ -1,0 +1,7 @@
+{
+  "name": "ancientLiterature",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

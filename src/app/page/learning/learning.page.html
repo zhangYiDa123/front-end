@@ -1,0 +1,50 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content class="mainBox">
+
+    <div class="one" padding>
+        <div class="part1" padding>
+          <div class="top">
+            <div class="fl">我的学识</div>
+            <div class="fl" style="text-align: right;"><span (click)="speedUp()">开启加速</span></div>
+          </div>
+          <div class="footer">{{wisdom||0}}</div>
+        </div>
+      
+        <div class="title">学识简介</div>
+        <p class="msg">学识影响用户获取佩玉数量，挖矿时间相同，学识越高，获取的   佩玉数量越多。</p>
+        <div class="line"></div>
+    </div>
+
+    <div class="two" padding>
+        <div class="title">学识记录</div>
+    </div>
+
+    <ion-content class="mainT" padding>
+      
+      <ion-list>
+        <div class="item clearfix" *ngFor="let item of wisdomList">
+          <p>{{item.typeStr}}<span>+{{item.wisdomChange}}</span></p>
+          <p>{{timeToComplete(item.createTime)}}</p>
+        </div>
+      </ion-list>
+      
+      <ion-infinite-scroll threshold="60px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content
+          loadingSpinner="bubbles"
+          loadingText="正在加载更多数据">
+        </ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+
+    </ion-content>
+
+</ion-content>
+
+  
+  
+  
+  
+
+

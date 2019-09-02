@@ -1,0 +1,78 @@
+@import './src/assets/scss/rem.scss';
+ion-content{
+	.main{
+		width:100%;
+		min-height:100%;
+		background:#EDEDE3;
+		padding-top:pxToRem(36);
+		.title{
+			width:pxToRem(460);
+			height:auto;
+			margin:0 auto;
+			>img{
+				width:100%;
+				height:auto;
+			}
+		}
+
+		.titleMsg{
+			width:pxToRem(550);
+			height:pxToRem(76);
+			line-height:pxToRem(76);
+			margin:pxToRem(30) auto;
+			text-align: center;
+			font-size:pxToRem(32);
+			background:url('../../assets/images/m18.png') no-repeat center;
+			background-size: 100% 100%;
+			>span{
+				color:#880303;
+			}
+		}
+		
+		.item{
+			width:100%;
+			height:pxToRem(400);
+			padding-top:pxToRem(30);
+			box-sizing: border-box;
+			.fl{
+				float:left;
+			}
+			.p1{
+				width:20%;
+				height:100%;
+				padding-top:pxToRem(100);
+				box-sizing: border-box;
+				>img{
+					width:100%;
+					height:auto;
+				}
+			}
+			.p2{
+				width:50%;
+				height:100%;
+				text-align: center;
+				>img{
+					width:100%;
+					height:auto;
+				}
+			}
+			.p3{
+				width:30%;
+				height:100%;
+				padding-top:pxToRem(55);
+				.img1{
+					width:60%;
+					float:right;
+					display: block;
+				}
+				.img2{
+					margin-top:pxToRem(40);
+					width:90%;
+					height:auto;
+					float:right;
+				}
+			}
+		}
+	}
+}
+

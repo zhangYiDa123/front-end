@@ -1,0 +1,97 @@
+@import './src/assets/scss/rem.scss';
+@import './src/assets/animate/animate.scss';
+ion-content{
+	width:100%;
+	border-top:1px solid #ededed;
+	.title{
+		font-size:pxToRem(32);
+		.fr{
+			float:right;
+			padding:pxToRem(6) pxToRem(16);
+			background:#6C4720;
+			color:#fff;
+			font-size:pxToRem(24);
+		}
+	}
+	.msg{
+		background:#D9D9D9;
+		width:100%;
+		margin-bottom:pxToRem(40);
+		.item{
+			width:100%;
+			height:pxToRem(58);
+			line-height:pxToRem(58);
+			margin-bottom:pxToRem(15);
+			.fl{
+				float:left;
+			}
+			.fr{
+				float:right;
+				>i{
+					margin-right:4px;
+				}
+			}
+			.fr.weight{
+				font-weight: 700;
+			}
+			.money{
+				font-size:pxToRem(34);
+				color:#F28300;
+			}
+		}
+	}
+	.itemBox{
+		height:pxToRem(510);
+		.payIcon{
+			width:100%;
+			text-align: center;
+			margin-bottom:pxToRem(25);
+			>i{
+				font-size:pxToRem(120);
+				color:#00A2FF;
+			}
+		}
+	
+		.tips{
+			margin-bottom:pxToRem(45);
+			.time{
+				color:#FF0000;
+			}
+			p{
+				margin:0 0 pxToRem(15) 0;
+				text-align: center;
+				font-size:pxToRem(24);
+			}
+		}
+		.tips2{
+			text-align: center;
+			margin:0 0 pxToRem(80) 0;
+			font-size:pxToRem(24);
+			color:#FF0000;
+		}
+		.pendding{
+			text-align: center;
+			font-size:pxToRem(28);
+			padding-top:pxToRem(40);
+			p{
+				color:#999;
+				.icon1{
+					font-size:pxToRem(100);
+					color:#F28300;
+					@include bounceIn();
+				}
+				.icon2{
+					font-size:pxToRem(100);
+					color:#007706;
+					@include bounceIn();
+				}
+			}
+			
+		}
+	}
+	
+	.tips3{
+		margin:0;
+		text-align: center;
+	}
+}

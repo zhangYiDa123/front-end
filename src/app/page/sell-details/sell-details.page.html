@@ -1,0 +1,69 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content>
+  <div class="item">
+    <h3 padding>订单信息</h3>
+    <div class="itemMain" padding>
+      <div class="list clearfix">
+        <span class="fl">订单号：</span>
+        <span class="fr">{{orderno}}</span>
+      </div>
+      <div class="list clearfix">
+        <span class="fl">交易佩玉数量：</span>
+        <span class="p1 fr">{{jadeInfo.num}}</span>
+      </div>
+      <div class="list clearfix list1">
+        <span class="fl">总金额：</span>
+        <span class="p2 fr">￥{{jadeInfo.totalPrice}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="item" *ngIf="status == 2 || status == 3 ||status == 4">
+    <h3 padding>买家信息</h3>
+    <div class="itemMain" padding>
+      <div class="list clearfix">
+        <span class="fl">姓名：</span>
+        <span class="fr">{{jadeInfo.buyerRealname||'-'}}</span>
+      </div>
+      <div class="list clearfix">
+        <span class="fl">手机号：</span>
+        <span class="fr">{{jadeInfo.buyerMobile||'-'}}</span>
+      </div>
+      <div class="list clearfix list1">
+        <span class="fl">支付宝账号：</span>
+        <span class="fr">{{jadeInfo.buyerAlipayAccount||'-'}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="resultIcon"> 
+    <div *ngIf="status == 1">
+        <i class="icon-shalou iconfont icon"></i>
+        <p>等待购买</p>
+    </div>
+
+    <div *ngIf="status == 2">
+        <i class="icon-shalou iconfont icon"></i>
+        <p>等待购买</p>
+        <p>剩余付款时间：15 分钟</p>
+    </div>
+
+    <div *ngIf="status == 3">
+        <i class="icon-wancheng  iconfont icon1"></i>
+        <p>请查看是否收到买方的支付宝转账</p>
+        <p>如已收到请点击下方放行</p>
+        <ion-button expand="full" shape="round" color="baseColor" class="isOk" (click)="payOver()">已收到款，确认放行</ion-button>
+    </div>
+
+    <div *ngIf="status == 4">
+      <div class="pendding">
+        <p><i class="icon-wancheng iconfont icon2"></i></p>
+        <p>交易完成</p>
+      </div>
+    </div>
+    
+  </div>
+  <p class="tips">如有问题请联系微信号：Havengogo</p>
+  <app-pay-popup *ngIf="popupState" (fromChild)="receiveVal($event)" [orderno]="orderno" [type]="2"></app-pay-popup>
+</ion-content>

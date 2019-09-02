@@ -1,0 +1,93 @@
+@import './src/assets/scss/rem.scss';
+.mainBox{
+	width:100%;
+	height:100%;
+	.part1{
+		width:100%;
+		height:pxToRem(243);
+		background:RGBA(255, 170, 59, 1);
+		box-sizing: border-box;
+		margin-bottom:pxToRem(25);
+		.top{
+			width:100%;
+			height:pxToRem(56);
+			margin-bottom:pxToRem(36);
+			line-height:pxToRem(56);
+			color:#fff;
+			.fl{
+				width:50%;
+				float:left;
+				span{
+					padding:pxToRem(5) pxToRem(15);
+					border-radius: pxToRem(5);
+					background:#fff;
+					color:#FF9000;
+					font-size:pxToRem(24);
+				}
+			}
+		}
+
+		.footer{
+			font-size: pxToRem(56);
+			color:#fff;
+		}
+	}
+
+	.mainT{
+		height:calc(100% - 305px);
+	}
+
+	.one{
+		height:270px;
+	}
+	.two{
+		height:35px;
+	}
+
+	.one,.two{
+		padding-top:0 !important;
+		padding-bottom:0 !important;
+	}
+
+	.title{
+		width:100%;
+		height:pxToRem(48);
+		line-height:pxToRem(48);
+		border-left:4px solid #FFAA3B;
+		box-sizing: border-box;
+		padding-left:pxToRem(20);
+		margin-bottom:pxToRem(15);
+		font-weight: 700;
+	}
+
+	.msg{
+		width:100%;
+		margin:0 0 pxToRem(37) 0;
+		font-size:pxToRem(24);
+		color:#625555;
+	}
+
+	.line{
+		width:100%;
+		height:pxToRem(20);
+		background:#D8D8D8;
+		margin-bottom:pxToRem(31);
+	}
+
+	.item{
+		margin-bottom:pxToRem(20);
+
+		p:nth-child(1){
+			font-size:pxToRem(24);
+			margin:0 0 0 0;
+			span{
+				float:right;
+			}
+		}
+		p:nth-child(2){
+			margin:pxToRem(10) 0 0 0;
+			font-size:pxToRem(24);
+			color:#D2D2D2;
+		}
+	}
+}

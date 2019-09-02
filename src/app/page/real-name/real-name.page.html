@@ -1,0 +1,40 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content padding>
+  <div class="item">
+    <span class="fl">真实姓名</span>
+    <div class="fr">
+      <input type="text" placeholder="请输入与绑定的支付宝相关的姓名" [(ngModel)]="realForm.realname"/>
+    </div>
+  </div>
+
+  <div class="item">
+    <span class="fl">身份证号</span>
+    <div class="fr">
+      <input type="number" placeholder="请输入身份证号码" [(ngModel)]="realForm.idCard"/>
+    </div>
+  </div>
+
+  <div class="item">
+    <span class="fl">支付宝号</span>
+    <div class="fr">
+      <input type="number" placeholder="请输入支付宝账户"  [(ngModel)]="realForm.alipayAccount"/>
+    </div>
+  </div>
+
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+  <!-- <p class="tips">为避免恶意注册，请支付0.1元至官方账户，完成实名认证</p> -->
+
+  <!-- <img src="assets/images/m25.png" class="Img"/> -->
+
+  <ion-button expand="full" shape="round" color="baseColor" class="pay" (click) = "pay()">确定</ion-button>
+</ion-content>

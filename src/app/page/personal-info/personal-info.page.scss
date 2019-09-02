@@ -1,0 +1,24 @@
+@import './src/assets/scss/rem.scss';
+ion-content{
+	.item{
+		width:100%;
+		height:pxToRem(68);
+		margin-bottom:pxToRem(25);
+		border-bottom:1px solid #ededed;
+		font-size:pxToRem(28);
+		.fl{
+			float:left;
+			line-height:pxToRem(68);
+		}
+		.fr{
+			float:right;
+			line-height:pxToRem(68);
+			color:#0096FF;
+			text-decoration: underline;
+		}
+		.number.fr{
+			color:#000;
+			text-decoration: none;
+		}
+	}
+}

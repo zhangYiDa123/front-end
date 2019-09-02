@@ -1,0 +1,37 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content padding>
+  <div class="banner">
+    <div class="fl">
+        <p>{{inviteAuthNum}}</p>
+        <p>已认证好友</p>
+    </div>
+    <div class="fl">
+        <p>{{authInviteWisdom}}</p>
+        <p>累计获得学识</p>
+    </div>
+  </div>
+  <div class="tableInfo">
+    <table>
+      <thead>
+        <tr>
+          <td>注册手机号</td>
+          <td>注册时间</td>
+          <td>学识</td>
+          <td>状态</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of invitationList;let i = index">
+          <td>{{i+1}}. {{desenFn(2,item.mobile)}}</td>
+          <td>{{item.createTime}}</td>
+          <td>+{{item.inviteWisdom||0}}</td>
+          <td>{{item.authFlagStr}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="tips" *ngIf="invitationList.length==0">暂无邀请记录</p>
+  </div>
+</ion-content>

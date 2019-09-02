@@ -1,0 +1,74 @@
+<ion-slides pager pager="true" [options]="slideOptions">
+  <ion-slide>
+    <img src="assets/images/m7.png" class="bannerImg"/>
+  </ion-slide>
+  <!-- <ion-slide>
+    <img src="assets/images/m7.png" class="bannerImg"/>
+  </ion-slide>
+  <ion-slide>
+    <img src="assets/images/m7.png" class="bannerImg"/>
+  </ion-slide> -->
+</ion-slides>
+
+  
+<div class="myTitle">
+  <div class="fl" (click)="checkBuy(true)"><span [ngClass]="{'active':checkActive}">购买</span></div>
+  <div class="fr"  (click)="checkBuy(false)"><span [ngClass]="{'active':!checkActive}">兑换</span></div>
+</div>
+
+<ion-content class="mainBox" padding>
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="下拉刷新"
+        refreshingSpinner="circles"
+        refreshingText="刷新中...">
+      </ion-refresher-content>
+    </ion-refresher>
+    
+    <ion-list>
+      <div *ngIf="checkActive">
+        <div class="item" *ngFor="let item of buyList">
+          <div class="fl">
+            <img [src]="item.mainPic||'assets/images/m0.png'" alt=""/>
+          </div>
+          <div class="fr">
+            <p class="p1">{{item.name}}</p>
+            <p class="p2">￥{{item.price}}</p>
+            <p class="p3">
+              <span>+{{item.bonusWisdom}} 学识</span>
+              <button ion-button (click) ='toDetails(item.id,1)'>立即购买</button>
+            </p>
+          </div>
+        </div>
+        <div *ngIf="buyList.length == 0" style="padding:20px 0;text-align: center;color:#999;">暂无数据</div>
+      </div>
+
+      <div *ngIf="!checkActive">
+        <div class="item" *ngFor="let item of exchangeList">
+          <div class="fl">
+            <img [src]="item.mainPic||'assets/images/m0.png'" alt=""/>
+          </div>
+          <div class="fr">
+            <p class="p1">{{item.name}}</p>
+            <p class="p2"></p>
+            <p class="p3">
+              <span>消耗玉佩:{{item.price}} 个</span>
+              <button ion-button (click) ='toDetails(item.id,2)'>立即兑换</button>
+            </p>
+          </div>
+        </div>
+        <div *ngIf="exchangeList.length == 0" style="padding:20px 0;text-align: center;color:#999;">暂无数据</div>
+      </div>
+    </ion-list>
+    
+    <ion-infinite-scroll threshold="60px" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText={{tipText}}>
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    
+</ion-content>
+

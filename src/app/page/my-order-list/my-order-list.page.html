@@ -1,0 +1,61 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<header>
+  <div class="fl" (click)="trade(1)">
+    <div [ngClass]="{'active':isSell}">出让</div>
+  </div>
+  <div class="fr" (click)="trade(2)">
+    <div [ngClass]="{'active':!isSell}">购入</div>
+  </div>
+</header>
+
+<ion-content>
+  <div class="main" padding>
+
+    <div class="change" *ngIf="isSell">
+      <div class="item" *ngFor="let item of sellList">
+        <div class="mark">
+          <img src="assets/images/m15.1.png"/>
+        </div>
+        <div class="fl">
+          <p>佩玉数量：{{item.num}}</p>
+          <p>总金额： ￥{{item.actualPrice}}</p>
+          <p>交易日期：{{item.createTime}}</p>
+        </div>
+        <div class="fr">
+          <p>状态：{{item.statusStr}}</p>
+          <p *ngIf="item.status==4">付款时间：{{timeDiffFn(item.completeTime,'')}}前</p>
+          <p *ngIf="item.status !== 4">确认时间：{{timeDiffFn(item.createTime,'')}}前</p>
+          <span (click)="checkDetails(item.orderno,1)" *ngIf="item.status !== 1">查看详情</span>
+          <span (click)="cancenl(item.orderno)" *ngIf="item.status == 1">取消出让</span>
+        </div>
+        <div class="number" *ngIf="item.status==4">订单编号：{{item.orderno}}</div>
+      </div>
+      <p class="tips" *ngIf="sellList.length == 0">暂无订单</p>
+    </div>
+
+    <div class="change" *ngIf="!isSell">
+      <div class="item" *ngFor="let item of buyList">
+        <div class="mark">
+          <img src="assets/images/m15.png"/>
+        </div>
+        <div class="fl">
+          <p>佩玉数量：{{item.num}}</p>
+          <p>总金额： ￥{{item.num*item.jadePrice}}</p>
+          <p>交易日期：{{item.createTime}}</p>
+        </div>
+        <div class="fr">
+          <p>状态：{{item.statusStr}}</p>
+          <p *ngIf="item.status !== 4">确认时间：{{timeDiffFn(item.createTime,'')}} 前</p>
+          <p *ngIf="item.status == 4">付款时间：{{timeDiffFn(item.completeTime,'')}} 前</p>
+          <span (click)="checkDetails(item.orderno,2)">查看详情</span>
+        </div>
+        <div class="number" *ngIf="item.status==4">订单编号：{{item.orderno}}</div>
+      </div>
+      <p class="tips" *ngIf="buyList.length == 0">暂无订单</p>
+    </div>
+
+  </div>
+</ion-content>

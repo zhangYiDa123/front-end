@@ -1,0 +1,20 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content padding>
+  <img [src]="detail.mainPic||'assets/images/m0.png'" class="img1"/>
+  <p>{{detail.name || '-'}}</p>
+  <div class="msg">
+    <span class="fl">运费：包邮</span>
+    <span class="fr">
+      <span *ngIf="type==2">消耗玉佩：{{detail.price||0}} 个</span>
+      <span *ngIf="type==1">￥{{detail.price||'0.00'}}（+ {{detail.bonusWisdom||0}}学识）</span>
+    </span>
+  </div>
+  <img [src]="detail.detailPic||'assets/images/m0.png'" class="img2"/>
+</ion-content>
+
+<ion-footer>
+  <p (click)="buyNow(id,type)">{{type==2?'立即兑换':'立即购买'}}</p>
+</ion-footer>

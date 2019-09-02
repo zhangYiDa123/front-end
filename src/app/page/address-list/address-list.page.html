@@ -1,0 +1,22 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of addressList" (click)='checkAddress(item.id)'>
+      <ion-avatar item-start>
+        {{getFirst(item.addressee)}}
+      </ion-avatar>
+      <div class="item">
+        <p class="p1">{{item.addressee||'-'}} <span>{{item.mobile||'-'}}</span></p>
+        <p class="p2">{{item.address||'-'}}</p>
+      </div>
+    </ion-item>
+  </ion-list>
+  <p class="tips" *ngIf="addressList.length == 0">暂无收件地址，请添加</p>
+</ion-content>
+
+<ion-footer (click) = 'addNew()'>
+  <p>添加新地址</p>
+</ion-footer>

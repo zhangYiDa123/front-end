@@ -1,0 +1,77 @@
+<ion-header>
+  <app-title [parentVal]="parentVal"></app-title>
+</ion-header>
+
+<ion-content>
+  <div class="myHeader">
+    <div class="fl" (click)='changeType(1)'>
+      <span [ngClass]="{'active':isBuy}" >购买</span>
+    </div>
+    <div class="fl" (click)='changeType(2)'>
+        <span [ngClass]="{'active':!isBuy}">兑换</span>
+    </div>
+  </div>
+  <div class="main" padding>
+    <div class="type1" *ngIf="isBuy">
+      <div class="list" *ngFor="let item of buyList">
+        <div class="top">
+          <div class="fl">
+            <img [src]="item.mainPic||'assets/images/m10.png'"/>
+          </div>
+          <div class="fr">
+            <p>{{item.name||'-'}}</p>
+            <p>学识：+{{item.bonusWisdom||0}}</p>
+            <p>数量：{{item.num||1}} <span class="cancel" *ngIf="item.status === 2" (click)="cancelOrder(item.orderno)">取消</span></p>
+            <p class="p1">
+              <span>状态：<em>{{item.statusStr||'-'}}</em></span>
+              <span *ngIf="item.status === 7">确认收货</span>
+              <span *ngIf="item.status === 2" (click)="toPay(item.totalPrice,item.orderno)">前去支付</span>
+            </p>
+          </div>
+        </div>
+        <div class="order">
+          <div class="middle">
+            <p>
+                <span>收件人:{{item.addressee||'-'}}</span>
+                <span>电话 : {{item.mobile||'-'}}</span>
+            </p>
+            <p>收货地址: {{item.address||'-'}}</p>
+          </div>
+          <div class="bottom" *ngIf="item.status == 7||item.status == 4">快递单号：{{item.expressNo}}</div>
+        </div>
+      </div>
+      <p *ngIf="buyList.length == 0" class="tips">暂无数据</p>
+    </div>
+
+    <div class="type1" *ngIf="!isBuy">
+        <div class="list" *ngFor="let item of exchangeList">
+          <div class="top">
+            <div class="fl">
+              <img [src]="item.mainPic||'assets/images/m10.png'"/>
+            </div>
+            <div class="fr">
+              <p>{{item.name||'-'}}</p>
+              <p>消耗玉佩：{{item.totalPrice}}</p>
+              <p>数量：{{item.num||1}}</p>
+              <p class="p1">
+                <span>状态：<em>{{item.expressNo?'已发货':'未发货'}}</em></span>
+                <!-- <span *ngIf="item.status == 2">去付款</span>
+                <span *ngIf="item.status == 1">确认收货</span> -->
+              </p>
+            </div>
+          </div>
+          <div class="order">
+            <div class="middle">
+              <p>
+                  <span>收件人:{{item.addressee||'-'}}</span>
+                  <span>电话 : {{item.mobile||'-'}}</span>
+              </p>
+              <p>收货地址: {{item.address||'-'}}</p>
+            </div>
+            <div class="bottom" *ngIf="item.expressNo">快递单号：{{item.expressNo}}</div>
+          </div>
+        </div>
+        <p *ngIf="exchangeList.length == 0" class="tips">暂无数据</p>
+    </div>
+  </div>
+</ion-content>

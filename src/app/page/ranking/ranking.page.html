@@ -1,0 +1,59 @@
+<app-title [parentVal]="parentVal"></app-title>
+<ion-content *ngIf="!loginState">
+    <img src="assets/images/m28.png" class="noImg"/>
+</ion-content>
+<ion-content *ngIf="loginState">
+    <ion-grid>
+        <ion-row class="headerM">
+            <ion-col class="t2">
+              <div class="main">
+                  <ion-img src="assets/images/m2.png" class="m"></ion-img>
+                  <div class="myH">
+                      <ion-img [src]="Second.headPic" alt=""></ion-img>
+                  </div>
+                  <p class="p3">{{Second.nickname}}</p>
+                  <p class="p2">{{Second.wisdom}}</p>
+              </div>
+            </ion-col>
+            <ion-col class="t1">
+                <div class="main">
+                    <ion-img src="assets/images/m1.png" class="m"></ion-img>
+                    <div class="myH">
+                        <ion-img [src]="First.headPic" alt="" ></ion-img>
+                    </div>
+                    <p class="p1">{{First.nickname}}</p>
+                    <p class="p2">{{First.wisdom}}</p>
+                </div>
+            </ion-col>
+            <ion-col class="t2">
+                <div class="main">
+                    <ion-img src="assets/images/m3.png"  class="m" alt=""></ion-img>
+                    <div class="myH">
+                        <ion-img [src]="Third.headPic" alt=""></ion-img>
+                    </div>
+                    <p class="p3">{{Third.nickname}}</p>
+                    <p>{{Third.wisdom}}</p>
+                </div>
+            </ion-col>
+          </ion-row>
+    </ion-grid>
+    <div class="mid"></div>
+    <ion-list class="listMain">
+      <ion-item *ngFor="let item of rankList;let i = index">
+          <ion-grid>
+              <ion-row class="itemList" >
+                  <ion-col size="8" class="fl">
+                    <span class="index">{{i+4}}</span>
+                    <span class="imgBox">
+                        <img [src]='item.headPic' alt=""/>
+                    </span>
+                    <em>{{item.nickname}}</em>
+                  </ion-col>
+                  <ion-col size="4" class="fr">
+                      {{(item.wisdom).toFixed(4)}}
+                  </ion-col>
+              </ion-row>
+          </ion-grid>
+      </ion-item>
+    </ion-list>
+</ion-content>
